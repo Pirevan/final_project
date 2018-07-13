@@ -1,0 +1,20 @@
+<%=form_tag search_user_tasks_path, method: :get do%>
+  <%= text_field_tag :search, nil, placeholder: "Search"%>
+  <%=submit_tag "Search"%>
+<%end%>
+
+
+
+
+
+
+<% @tasks.each do |task| %>
+<h4>Task: <%=task.task %><br></h4>
+<h4>Remarks: <%=task.remarks %><br></h4>	
+<h4><%=task.start_date %><br></h4>
+<h4><%=task.end_date %><br></h4>
+
+
+
+<%end%>
+

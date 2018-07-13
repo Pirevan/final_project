@@ -1,0 +1,11 @@
+<%=form_for @task, url:user_tasks_path do |f| %>
+
+<%=f.text_field :task, placeholder: "Input your task"%>
+<%=f.text_field :remarks, placeholder: "Additional remarks"%>
+<%=f.date_field :start_date, placeholder: "start date" %>
+<%=f.date_field :end_date, placeholder: "end date" %>
+<%=f.submit%>
+
+<%end%>
+
+
