@@ -17,6 +17,7 @@ class BraintreeController < ApplicationController
 		   )
 
 		  if result.success?
+		  	current_user.premium!
 		    redirect_to root_path :root, :flash => { :success => "Transaction successful!" }
 		    
 		  else

@@ -1,20 +1,35 @@
-<%=form_tag search_user_tasks_path, method: :get do%>
+
+
+
+<%=form_tag search_user_tasks_path, method: :get, remote: true, id: 'new_search' do%>
   <%= text_field_tag :search, nil, placeholder: "Search"%>
   <%=submit_tag "Search"%>
 <%end%>
 
 
+<%= link_to "new task", new_user_task_path(current_user), id:'new_link', remote: true %>
 
 
 
 
-<% @tasks.each do |task| %>
-<h4>Task: <%=task.task %><br></h4>
-<h4>Remarks: <%=task.remarks %><br></h4>	
-<h4><%=task.start_date %><br></h4>
-<h4><%=task.end_date %><br></h4>
 
 
 
+
+
+	<% @tasks.each do |task| %>
+	<h4>Task: <%=task.task %><br></h4>
+	<h4>Remarks: <%=task.remarks %><br></h4>	
+	<h4>Start Date: <%=task.start_date %><br></h4>
+	<h4>End Date: <%=task.end_date %><br></h4>	
+	<h4>Status: <%=task.status %><br></h4>
+
+	<%=link_to "show", user_task_path(current_user,task) %>
+	<%=link_to "edit", edit_user_task_path(current_user,task)%>
+	<%=button_to "delete", user_task_path(current_user,task), remote: true, method: :delete %>
+	
+
+
+	
 <%end%>
-
+<%=link_to "home", root_path %>

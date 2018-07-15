@@ -1,13 +1,38 @@
 <h1>Welcome</h1>
 
+
+<%if !current_user %>
+<%= link_to "sign up", new_user_path %>
+<%end%>
+
 <%if !current_user %>
 <%= link_to "sign in", sign_in_path %>
 <%end%>
-
+<br>
 <%if current_user %>
 <%= link_to "sign out", sign_out_path %>
 
 <%end%>
 
+<br>
 
+
+<%if current_user %>
+<%= link_to "create new tasks", new_user_task_path(current_user) %>
+<%end%>
+<br>
+
+
+<%if current_user %>
+<%= link_to "view your current tasks", user_tasks_path(current_user) %>
+<%end%>
+<br>
+
+<%if current_user %>
+<%if current_user.regular? %>
 <%= link_to "Make Payment", braintree_new_path %>
+<%end%>
+<%end%>
+<br>
+
+

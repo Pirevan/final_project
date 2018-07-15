@@ -31,6 +31,8 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 gem 'braintree'
 
+gem 'jquery-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

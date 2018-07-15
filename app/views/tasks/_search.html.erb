@@ -1,0 +1,18 @@
+<h1>These are the list of your searched tasks</h1>	
+
+<%@tasks.each do |task|%>
+<h4>Task: <%=task.task %><br></h4>
+<h4>Remarks: <%=task.remarks %><br></h4>	
+<h4><%=task.start_date %><br></h4>
+<h4><%=task.end_date %><br></h4>
+
+<%=link_to "show", user_task_path(current_user,task) %>
+<%=link_to "edit", edit_user_task_path(current_user,task)%>
+
+
+<%end%>
+
+<br>
+<h1>This is the end of the search result</h1>
+
+<h1>This is your index</h1>

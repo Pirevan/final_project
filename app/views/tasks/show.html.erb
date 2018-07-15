@@ -1,0 +1,9 @@
+
+<h4>Task: <%=@task.task %><br></h4>
+<h4>Remarks: <%=@task.remarks %><br></h4>	
+<h4>Start Date<%=@task.start_date %><br></h4>
+<h4>End Date<%=@task.end_date %><br></h4>
+
+<%=link_to "edit", edit_user_task_path(current_user,@task)%>
+<%=link_to "index", user_tasks_path(current_user)%>
+
