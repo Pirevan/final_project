@@ -6,8 +6,11 @@
   <%=submit_tag "Search"%>
 <%end%>
 
-
+<%if current_user.tasks.count <= 5 || current_user.premium?%>
 <%= link_to "new task", new_user_task_path(current_user), id:'new_link', remote: true %>
+<%else%>
+<%= link_to "Become a premium member and create unlimited tasks", new_user_task_path(current_user)%>
+<%end%>
 
 
 
