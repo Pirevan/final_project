@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jnicklas/capybara.git
-  revision: 252b77c067e3e4484d642e2d9a2a219a88df8130
+  revision: 888926e90b483e756c2a80d89f966b96a4f9d506
   specs:
     capybara (3.4.0.dev)
       addressable
@@ -121,7 +121,7 @@ GEM
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (3.12.0)
     rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -207,7 +207,7 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.14)
+    uglifier (4.1.15)
       execjs (>= 0.3.0, < 3)
     web-console (3.6.2)
       actionview (>= 5.0)
