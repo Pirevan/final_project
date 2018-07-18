@@ -1,1 +1,13 @@
-index.html.erb
+
+<%if current_user.present? && current_user.admin?%>
+	<%@users.each do |user|%>
+	<h5>email:<%=user.email%></h5><br>
+	<%=button_to "delete", user_path(user),method: :delete %>
+	<%end%>
+
+	<%else%>
+	<%=link_to "Home, unfortunately you do not have access to this information", root_path %>
+
+<%end%>
+
+<%=link_to "home", root_path%>

@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 	
 	def index
+		if current_user.admin?
+		@users = User.all
+		end
 	end
 
 
@@ -16,6 +19,12 @@ class UsersController < ApplicationController
 			else
 				render "new"
 			end
+	end
+
+	def destroy
+		@user = User.find(params[:id])
+		@user.destroy
+			redirect_to users_path
 	end
 
 	private
