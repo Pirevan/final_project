@@ -11,7 +11,7 @@ class Task < ApplicationRecord
 
 
   	def start_date_cannot_be_in_the_past
-    	if start_date.present? && start_date <= Date.today
+    	if start_date.present? && start_date <= Date.today-1
       		errors.add(:start_date, "can't be in the past")
     	end
   	end 
@@ -19,12 +19,12 @@ class Task < ApplicationRecord
   	validate :end_date_cannot_be_in_the_past
 
   	def end_date_cannot_be_in_the_past
-    	if end_date.present? && end_date <= Date.today
+    	if end_date.present? && end_date <= Date.today-1
       		errors.add(:end_date, "can't be in the past")
     	end
   	end  
   	def end_date_cannot_be_before_start_date
-    	if end_date.present? && end_date <= start_date
+    	if end_date.present? && end_date <= start_date-1
       		errors.add(:end_date, "can't be in the past")
     	end
   	end  
