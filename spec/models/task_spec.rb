@@ -13,6 +13,12 @@ RSpec.describe Task, type: :model do
 			expect(task).to eq(false)
 		end
 
+		it "ensures presence of user" do 
+		no_user_task = Task.new(:user => nil)
+		no_user_task.should_not be_valid
+
+		end
+
 		
 
 
