@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2018_07_13_123224) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "tasks", force: :cascade do |t|
     t.string "task"
     t.string "remarks"
     t.date "start_date"
     t.date "end_date"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "status", default: 0
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
@@ -29,4 +32,5 @@ ActiveRecord::Schema.define(version: 2018_07_13_123224) do
     t.integer "paymentstatus", default: 0
   end
 
+  add_foreign_key "tasks", "users"
 end
