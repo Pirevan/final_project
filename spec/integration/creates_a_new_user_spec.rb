@@ -38,6 +38,8 @@ feature "creates a new task" do
 		fill_in "task_start_date", with: Date.today+1
 		fill_in "task_end_date", with: Date.today+2
 		click_button "Create Task"
+		expect(page).to have_content("Task")
+
 
 	end
 
