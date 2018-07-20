@@ -35,4 +35,12 @@
 <%end%>
 <br>
 
+<%if current_user %>
+<%if current_user.admin? %>
+<%=link_to "users index", users_path %>
+<%end%>
+<%end%>
+
+<br>
+
 
